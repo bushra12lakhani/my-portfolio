@@ -55,3 +55,31 @@ sr.reveal('.home__data, .about__img, .skills__subtitle, .skills__text',{});
 sr.reveal('.home__img, .about__subtitle, .about__text, .skills__img',{delay: 400}); 
 sr.reveal('.home__social-icon',{ interval: 200}); 
 sr.reveal('.skills__data, .work__img, .contact__input',{interval: 200}); 
+
+
+/* ===== SMOOTH SCROLL & CONTACT OFFSET ===== */
+// document.querySelector('.button').addEventListener('click', function(e){
+//   e.preventDefault();
+//   document.querySelector('#contact').scrollIntoView({ behavior: 'smooth' });
+// });
+
+/* ===== CONTACT FORM SUBMISSION WITH POPUP ===== */
+const contactForm = document.querySelector('.contact__form');
+
+contactForm.addEventListener('submit', function(e) {
+  e.preventDefault(); // page reload nahi hoga
+
+  // Form validation simple (optional)
+  const name = contactForm.querySelector('input[type="text"]').value;
+  const email = contactForm.querySelector('input[type="email"]').value;
+  const phone = contactForm.querySelector('input[type="tel"]').value;
+  const message = contactForm.querySelector('textarea').value;
+
+  if(name && email && phone && message){
+    // Popup show
+    alert("Thank you, " + name + "! Your message has been sent successfully.");
+    contactForm.reset(); // form clear ho jaye
+  } else {
+    alert("Please fill all the fields before submitting.");
+  }
+});

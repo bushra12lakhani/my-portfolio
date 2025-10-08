@@ -402,7 +402,7 @@ img {
 
 .work__btn {
   background: var(--first-color);
-  color: #fff;
+  color: var(--second-color);
   padding: 0.5rem 1rem;
   border-radius: 0.3rem;
   transition: 0.3s;
@@ -619,3 +619,53 @@ img {
   transition: all 0.3s ease-in-out;
 }
 
+/* ===== SMOOTH SCROLL & CONTACT OFFSET ===== */
+/* html, body {
+  height: 100%;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+}
+
+#contact {
+  scroll-margin-top: var(--header-height);
+}
+
+
+.contact {
+  position: relative;    
+  z-index: 1;           
+}
+
+.contact__container {
+  display: grid;
+  justify-items: center;
+  width: 100%;
+  max-width: 600px;     
+  margin: 0 auto;
+  padding: 2rem 1rem;   
+} */
+/* ===== CONTACT BUTTON & FORM POPUP ===== */
+:root {
+  --main-color: var(--first-color);       /* button main color */
+  --hover-color: hsl(var(--hue-color), 89%, 50%); /* hover effect */
+  --text-color: var(--second-color);     /* input text color */
+  --font-family: var(--body-font);
+}
+
+.contact__button {
+  background-color: var(--main-color);
+  color: #fff;
+  font-size: var(--normal-font-size);
+  font-weight: var(--font-semi);
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.contact__button:hover {
+  background-color: var(--hover-color);
+  transform: translateY(-2px);
+}
